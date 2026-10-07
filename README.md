@@ -41,21 +41,26 @@ Commit message:
 ## Iteration 3
 
 Final behavior:
--
-
+- findResult returns the largest number in the array. If the array is empty, it returns Integer.MIN_VALUE instead of crashing. All 4 tests pass.
+ 
 What was fixed:
--
+- I added a check at the top of the method. If the array has no values, it returns Integer.MIN_VALUE right away, before the code tries to read values[0]. That fixed the crash in testEmptyArray.
 
 What you learned:
--
+- AI is only as good as the prompt. The first prompt was vague, so it guessed wrong. The second one was clear but left out the empty array case. Once the prompt covered that edge case, the code passed everything. The tests were what showed me what was missing each time.
 
 Commit message:
--
+- Iteration 3: final version passing all tests
 
 ---
 
 ## Final Reflection
 
 - How did AI responses change across prompts?
+  - The first prompt only gave a method name, so the AI guessed and wrote a sum. The second prompt said exactly what to return, so it found the largest number, but it didn't think about empty arrays. The third prompt called out the empty array case, and that version passed everything. Each time the prompt got more specific, the code got closer to what the tests wanted.
+  
 - How did testing affect your changes?
+  - The tests told me what the method was actually supposed to do. After the first run I could see they wanted the largest number, not the sum. After the second run, the only failure was the empty array, so I knew exactly what to fix next. Without the tests I would have accepted the first AI answer, since it looked fine.
+  
 - What did version control help you understand?
+  - Having a commit for each iteration made it easy to see how the code changed from one version to the next. I also ran into Git problems during setup, where my commits weren't going through at all. Checking git status and git log showed me what Git actually had versus what I thought I had saved. Now I check that my commits are really on GitHub instead of assuming they are.
