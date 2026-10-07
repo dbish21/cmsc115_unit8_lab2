@@ -25,16 +25,16 @@ Commit message:
 ## Iteration 2
 
 What changed:
--
+- The method now finds the largest number instead of adding everything up. It starts with the first value as the max, then loops through the rest and replaces max whenever it finds a bigger number.
 
 What improved:
--
+- testBasicArray, testNegativeNumbers, and testSingleValue all pass now. Starting with the first value instead of 0 is what made the negative numbers test work, since -1 is less than 0.
 
 What still failed and why:
--
+- testEmptyArray still fails. The code grabs values[0] right away, and an empty array has no index 0, so it crashes with an ArrayIndexOutOfBoundsException. The prompt never said what to do with an empty array, so the AI didn't handle it.
 
 Commit message:
--
+- Iteration 2: largest value implementation
 
 ---
 
